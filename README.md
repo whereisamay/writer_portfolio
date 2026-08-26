@@ -19,9 +19,9 @@ The layout is already wired up for three images. Drop files with these
 
 | File | Used in |
 |---|---|
-| `assets/images/headshot.jpg` | Hero section (right side) |
-| `assets/images/chart-numbers.jpg` | "Spec to scribble" section (stock image of charts/numbers) |
-| `assets/images/stone.jpg` | "The dream" section |
+| `assets/images/headshot.jpg` | Hero section (right side) — mustard-blob frame |
+| `assets/images/pm-illustration.png` | "Spec to scribble" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
+| `assets/images/stone.jpg` | "The dream" section — tall arch frame (3:4), warm stone-toned panel |
 
 ## Add your content
 
