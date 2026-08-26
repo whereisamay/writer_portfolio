@@ -21,7 +21,7 @@ The layout is already wired up for three images. Drop files with these
 |---|---|
 | `assets/images/headshot.png` | Hero section (right side) — mustard-blob frame |
 | `assets/images/pm-illustration.png` | "Spec to scribble" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
-| `assets/images/stone.png` | "The dream" section — tall arch frame (3:4), warm stone-toned panel |
+| `assets/images/balance-illustration.jpg` | "The dream" section — 16:9 card, `object-fit: contain`, blue-tinted panel (use a landscape illustration, not a cropped photo) |
 
 ## Add your content
 
