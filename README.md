@@ -21,9 +21,8 @@ a styled placeholder:
 |---|---|
 | `assets/images/headshot.png` | Hero section (right side) — mustard-blob frame |
 | `assets/images/pm-illustration.png` | "The backstory" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
-| `assets/images/ga1.jpg` … `ga8.jpg` | The first 8 slides of the Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (ga1 = "A lazy day sipping & binging at Majorda" … ga8 = "A colourful flight of stairs in Fontainhas") |
-| `assets/images/goa-09.jpg`, `assets/images/goa-10.jpg` | Slides 9–10 of the same carousel ("Immersing myself in the history of Old Goa", "Cycling & island hopping between Dewar & Wanxim") — still placeholders, no photos supplied for these two yet |
-| `assets/images/coonoor.jpg` | The Coonoor section in the same article |
+| `assets/images/ga1.jpg` … `ga8.jpg` | The 8 slides of the Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (ga1 = "A lazy day sipping & binging at Majorda" … ga8 = "A colourful flight of stairs in Fontainhas") |
+| `assets/images/coonoor.png` | The Coonoor section in the same article |
 | `assets/images/card-tote-bag.png` | "Selected work" — Essay card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
 
