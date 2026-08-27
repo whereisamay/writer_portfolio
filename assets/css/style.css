@@ -1022,20 +1022,30 @@ a { color: inherit; text-decoration: none; }
   .header-socials { display: none; }
   .nav-toggle { display: flex; }
 
+  .site-header.nav-open {
+    background: var(--cream);
+  }
+  .site-header.nav-open .header-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-soft);
+  }
   .site-header.nav-open .main-nav {
+    order: 3;
+    flex-basis: 100%;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 78px; left: 0; right: 0;
-    background: var(--cream);
-    padding: 20px 20px 28px;
-    border-bottom: 1px solid var(--line-soft);
     gap: 18px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-soft);
   }
   .site-header.nav-open .header-socials {
+    order: 4;
+    flex-basis: 100%;
     display: flex;
-    position: absolute;
-    top: 210px; left: 20px;
+    gap: 10px;
+    margin-top: 20px;
   }
 
   .hero { padding: 56px 0 40px; }
