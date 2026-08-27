@@ -496,17 +496,30 @@ a { color: inherit; text-decoration: none; }
 }
 
 .work-card-media {
+  position: relative;
   aspect-ratio: 16 / 10;
   background: repeating-linear-gradient(135deg, var(--mustard-2), var(--mustard-2) 10px, var(--mustard) 10px, var(--mustard) 20px);
   display: grid;
   place-items: center;
   border-bottom: 2px solid var(--ink);
+  overflow: hidden;
 }
 .work-card-media span {
   font-family: var(--font-display);
   font-size: 40px;
   color: rgba(28,26,22,0.35);
 }
+
+.work-card-media--photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work-card-media--photo span { display: none; }
+.work-card-media--photo.img-missing img { display: none; }
+.work-card-media--photo.img-missing span { display: block; }
 
 .work-card-body {
   padding: 22px 22px 26px;
