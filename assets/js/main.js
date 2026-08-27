@@ -46,6 +46,18 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  // "Jump to a section" dropdown (mobile stand-in for a wide menu table)
+  document.querySelectorAll(".menu-dropdown").forEach(function (select) {
+    select.addEventListener("change", function () {
+      var target = document.getElementById(select.value);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", "#" + select.value);
+      }
+      select.selectedIndex = 0;
+    });
+  });
+
   // Back to top
   var backToTop = document.getElementById("backToTop");
   if (backToTop) {
