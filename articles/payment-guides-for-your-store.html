@@ -62,33 +62,126 @@
       <div class="article-wrap">
         <article class="article-body reveal">
 
-          <p>Step-by-step instructions to install and configure our payments plugin on your Shopify &amp; WooCommerce store, so you can start accepting payments in just a few minutes.</p>
+          <p>Step-by-step instructions to install and configure our payments plugin on your Shopify &amp; WooCommerce store.</p>
 
-          <h2>Shopify</h2>
+          <div class="table-scroll">
+          <table class="menu-table">
+            <thead>
+              <tr><th>Shopify</th><th>WooCommerce</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="#shopify-prerequisites">Pre-requisites</a></td><td><a href="#woo-prerequisites">Pre-requisites</a></td></tr>
+              <tr><td><a href="#shopify-step-1">Step 1: Install the App in Shopify</a></td><td><a href="#woo-step-1">Step 1: Search for the Plugin</a></td></tr>
+              <tr><td><a href="#shopify-step-2">Step 2: Link your Finmo Account</a></td><td><a href="#woo-step-2">Step 2: Install &amp; Activate the Plugin</a></td></tr>
+              <tr><td><a href="#shopify-step-3">Step 3: Configure and Activate Payment Methods</a></td><td><a href="#woo-step-3">Step 3: Configure the plugin</a></td></tr>
+              <tr><td><a href="#shopify-testing">Testing Payments</a></td><td><a href="#woo-step-4">Step 4: Run a test transaction</a></td></tr>
+              <tr><td></td><td><a href="#woo-refund">Initiate a test refund</a></td></tr>
+              <tr><td></td><td><a href="#woo-uninstall">Uninstalling the Finmo Payments App</a></td></tr>
+            </tbody>
+          </table>
+          </div>
 
-          <p>Before you begin, make sure you have an active Shopify store and a Finmo account with your Sandbox and Production API keys handy. You&rsquo;ll find these in your Finmo Dashboard under <strong>Settings &rarr; Plugins &rarr; Shopify</strong>.</p>
+          <h2 id="shopify">Shopify</h2>
+          <p>Step-by-step instructions to install and configure Finmo&rsquo;s plugin for Shopify.</p>
 
-          <ol>
-            <li>Head to the <a href="https://apps.shopify.com/finmo-payments" target="_blank" rel="noopener noreferrer">Finmo Payments app</a> on the Shopify App Store and click <strong>Install</strong>. This redirects you to your Shopify store.</li>
-            <li>On your Shopify store, click the <strong>Install</strong> CTA. You&rsquo;ll be redirected to the Finmo authentication page.</li>
-            <li>Enter your <strong>Access Key</strong> and <strong>Secret Key</strong> for both the Sandbox and Production environments.</li>
-            <li>Open the API Key details modal for each environment and make sure the status toggle is switched <strong>on</strong>. Both your Production and Sandbox keys need this enabled to work correctly.</li>
-            <li>Submit your keys. You&rsquo;ll be redirected back to your Shopify store to configure and activate the payment methods you want to offer customers at checkout.</li>
-          </ol>
+          <h3 id="shopify-prerequisites">Pre-requisites</h3>
+          <p>Before proceeding with the installation, make sure you have:</p>
+          <ul>
+            <li>an active and verified Finmo account.</li>
+            <li>the Shopify plugin enabled for your Finmo account.</li>
+            <li>the relevant payment methods (e.g. card, local methods, etc) enabled for your Finmo Account.</li>
+          </ul>
+          <p>Once you have these prerequisites in place, follow the steps mentioned below to install the Finmo Payments app on your Shopify store.</p>
+
+          <h3 id="shopify-step-1">Step 1: Install the App in Shopify</h3>
+          <ul>
+            <li>Install the Finmo Payments app from the Shopify App Store. This can be found on the following URL: <a href="https://apps.shopify.com/finmo-payments" target="_blank" rel="noopener noreferrer">https://apps.shopify.com/finmo-payments</a></li>
+            <li>On clicking &ldquo;Install&rdquo; in the App Store Page, you will be redirected to app installation page on your Shopify store, as shown below.</li>
+            <li>Next, clicking on the Install CTA will redirect you to the Finmo authentication page where you will be required to enter your API keys.</li>
+          </ul>
+
+          <h3 id="shopify-step-2">Step 2: Link your Finmo Account</h3>
+          <ul>
+            <li>On the Finmo authentication page (Step 1), enter your Finmo Access Key and Secret Key for both the Sandbox and Production environments.
+              <ul>
+                <li>These keys are available in your Finmo Dashboard under Settings &rarr; Plugins &rarr; Shopify.</li>
+              </ul>
+            </li>
+            <li>To access the Sandbox keys, switch your dashboard to the Sandbox environment. You can do this through the Sandbox toggle located at the top left of the dashboard.</li>
+            <li>When you open the API Key details modal, ensure that the status toggle is switched on. This has to be enabled for both your Production and Sandbox keys to work correctly.</li>
+            <li>Now, copy these keys and enter them in the Finmo Authentication Page.</li>
+          </ul>
+
+          <h3 id="shopify-step-3">Step 3: Configure and Activate Payment Methods</h3>
+          <ul>
+            <li>Upon successfully submitting the production and sandbox keys, you will be redirected back to your Shopify store to configure and activate the payment methods.</li>
+            <li>Here you can activate the payment methods that you intend to offer to your customers during checkout &amp; save the changes.</li>
+            <li>You can modify the payment methods, you can find this section on your Shopify dashboard by navigating to Settings &gt; Payments &gt; Finmo Payments.</li>
+          </ul>
+
+          <h3 id="shopify-testing">Testing Payments</h3>
+          <p>To test any of the available payment methods, follow the steps mentioned below:</p>
+          <ul>
+            <li>Navigate to Settings &gt; Payments &gt; Finmo Payments.</li>
+            <li>Toggle the test mode button. This will route all payment actions on your Shopify store to the sandbox environment on your Finmo account.</li>
+          </ul>
 
           <p class="doc-source">Source: <a href="https://docs.finmo.net/docs/shopify" target="_blank" rel="noopener noreferrer">docs.finmo.net/docs/shopify</a></p>
 
-          <h2>WooCommerce</h2>
+          <h2 id="woocommerce">WooCommerce</h2>
+          <p>Step-by-step instructions to install and configure Finmo&rsquo;s plugin for WooCommerce.</p>
 
-          <p>Before you begin, make sure you have an active, verified Finmo account with the relevant payment methods (card, local methods, etc.) enabled.</p>
+          <h3 id="woo-prerequisites">Pre-requisites</h3>
+          <p>Before proceeding with the installation, make sure you have:</p>
+          <ul>
+            <li>An active and verified Finmo account.</li>
+            <li>Finmo&rsquo;s API keys for WooCommerce are enabled</li>
+            <li>The relevant payment methods (e.g. local methods, etc) enabled for your Finmo Account</li>
+          </ul>
+          <p>Once you have these prerequisites in place, follow the steps mentioned below to set up the Finmo Payments app on your WooCommerce store.</p>
 
-          <ol>
-            <li>In your WordPress admin dashboard, go to <strong>Plugins &rarr; Add Plugin</strong> and search for &ldquo;Finmo Payments&rdquo;.</li>
-            <li>Open the listing and click <strong>Install and activate</strong>.</li>
-            <li>In <strong>Installed Plugins</strong>, locate Finmo Payments, click <strong>Manage</strong>, then tick the <strong>Enable Finmo Payments</strong> checkbox.</li>
-            <li>In the Plugins module of your Finmo Dashboard, open the WooCommerce widget and copy the <strong>API Access Key</strong> and <strong>Secret Key</strong>. For testing, toggle <strong>Sandbox Mode</strong> on and copy the sandbox keys instead.</li>
-            <li>Paste the keys into the plugin settings, and set the environment to match: <strong>Sandbox</strong> while testing, <strong>Production</strong> when you&rsquo;re ready to go live.</li>
-          </ol>
+          <h3 id="woo-step-1">Step 1: Search for the Plugin</h3>
+          <ul>
+            <li>Go to your WordPress admin dashboard and navigate to Plugins &rarr; Add Plugin.</li>
+            <li>You will be redirected to Wordpress&rsquo;s plugins market place. In the search bar, type &ldquo;Finmo Payments&rdquo;. You&rsquo;ll see the Finmo Payments plugin appear in the results.</li>
+          </ul>
+
+          <h3 id="woo-step-2">Step 2: Install &amp; Activate the Plugin</h3>
+          <ul>
+            <li>Open the listing, and click on &ldquo;Install and activate&rdquo;.</li>
+          </ul>
+
+          <h3 id="woo-step-3">Step 3: Configure the plugin</h3>
+          <ul>
+            <li>In your WordPress dashboard, go to the Installed Plugins section, locate Finmo Payments, and click Manage.</li>
+            <li>Tick the Enable Finmo Payments checkbox.</li>
+            <li>To run a test transaction, set the environment to Sandbox. For live transactions, select Production.</li>
+            <li>To configure API keys, log in to your Finmo account and navigate to Settings &gt; Developer Settings &gt; Plugins.</li>
+            <li>In the Plugins module, click on the WooCommerce widget to copy the API Access Key and Secret Key. For sandbox keys, toggle Sandbox Mode on and copy the respective keys.</li>
+          </ul>
+
+          <h3 id="woo-step-4">Step 4: Run a test transaction</h3>
+          <ul>
+            <li>In the plugin settings, set the environment to Sandbox.</li>
+            <li>Visit the test store, add a product to the cart, and complete checkout.</li>
+            <li>In your Finmo dashboard, toggle Sandbox Mode on and go to Receivables &gt; Payin.</li>
+            <li>The payment made during checkout will appear as a pending payin. Click on it and simulate a payin completion.</li>
+          </ul>
+
+          <h3 id="woo-refund">Initiate a test refund</h3>
+          <ul>
+            <li>Navigate to the WooCommerce orders module and click on the &lsquo;Refund&rsquo; CTA.</li>
+            <li>Input the amount to be refunded and then click on the &lsquo;Refund via Finmo Payments&rsquo; CTA.</li>
+            <li>In your Finmo dashboard, toggle the Sandbox Mode on and go to Receivables &gt; Refunds.</li>
+            <li>The refund initiated from the WooCommerce orders module will appear as a pending refund. Click on it and simulate a refund completion.</li>
+          </ul>
+
+          <h3 id="woo-uninstall">Uninstalling the Finmo Payments App</h3>
+          <ul>
+            <li>Navigate to the Installed Plugins section in WordPress.</li>
+            <li>Locate Finmo Payments and click on the &lsquo;Deactivate&rsquo; CTA.</li>
+            <li>On successful deactivation, the &lsquo;Delete CTA&rsquo; will be available. Click on the Delete CTA to uninstall the plugin from your account.</li>
+          </ul>
 
           <p class="doc-source">Source: <a href="https://docs.finmo.net/docs/woocommerce" target="_blank" rel="noopener noreferrer">docs.finmo.net/docs/woocommerce</a></p>
 

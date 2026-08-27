@@ -35,7 +35,11 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      // threshold is a fraction of the target's OWN height, not the
+      // viewport - a tall element (like a long article body) can need more
+      // pixels visible than the viewport ever shows, so it would never
+      // cross a threshold above ~0 and would stay invisible forever.
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
   } else {
