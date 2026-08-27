@@ -23,7 +23,7 @@ a styled placeholder:
 | `assets/images/pm-illustration.png` | "The backstory" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
 | `assets/images/goa-01.jpg` … `goa-10.jpg` | The Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (01 = "A lazy day sipping & binging at Majorda" … 10 = "Cycling & island hopping between Dewar & Wanxim") |
 | `assets/images/coonoor.jpg` | The Coonoor section in the same article |
-| `assets/images/card-tote-bag.jpg` | "Selected work" — Essay card thumbnail |
+| `assets/images/card-tote-bag.png` | "Selected work" — Essay card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
 
 ## Add your content
