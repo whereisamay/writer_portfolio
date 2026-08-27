@@ -89,8 +89,13 @@
     });
     var dots = Array.prototype.slice.call(dotsWrap.children);
 
+    // The real distance between slides, not just one slide's own width -
+    // .photo-carousel-slide is a <figure>, which browsers give a default
+    // horizontal margin, so the gap between slide starts is wider than the
+    // slide itself unless measured this way.
     function slideStep() {
-      return slides[0].getBoundingClientRect().width;
+      if (slides.length < 2) return slides[0].getBoundingClientRect().width;
+      return slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left;
     }
 
     // Update the active dot / disabled state right away, driven by the

@@ -25,14 +25,9 @@ a styled placeholder:
 | `assets/images/coonoor.png` | The Coonoor section in the same article |
 | `assets/images/card-tote-bag.png` | "Selected work" — Essay card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
+| `assets/images/woos.jpg` | "Selected work" — How-to card thumbnail |
 
 ## Add your content
-
-Search the page for `[bracketed placeholder text]` — these are the spots
-still waiting on your copy:
-
-- Selected work cards — the `href="#"` link on the How-to card's
-  "Read it →" (title/description still pending too)
 
 To add or remove work cards, copy/paste an `<article class="work-card">...</article>`
 block inside `.work-grid` in `index.html` — it's a plain CSS grid (3 columns
