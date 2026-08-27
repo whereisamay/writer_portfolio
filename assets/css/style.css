@@ -841,13 +841,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.75;
   color: var(--ink);
 }
-.article-body .lede {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.55;
-  margin: 0 0 32px;
-}
 .article-body h2 {
   font-family: var(--font-display);
   font-weight: 600;

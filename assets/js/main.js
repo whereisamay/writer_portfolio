@@ -51,13 +51,22 @@
     });
   }
 
-  // FAQ accordion
-  document.querySelectorAll(".faq-question").forEach(function (btn) {
+  // FAQ accordion (exclusive - opening one closes the rest)
+  var faqButtons = document.querySelectorAll(".faq-question");
+  faqButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
       var item = btn.closest(".faq-item");
       var open = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!open));
-      item.classList.toggle("is-open", !open);
+
+      faqButtons.forEach(function (otherBtn) {
+        otherBtn.setAttribute("aria-expanded", "false");
+        otherBtn.closest(".faq-item").classList.remove("is-open");
+      });
+
+      if (!open) {
+        btn.setAttribute("aria-expanded", "true");
+        item.classList.add("is-open");
+      }
     });
   });
 })();
