@@ -21,7 +21,8 @@ a styled placeholder:
 |---|---|
 | `assets/images/headshot.png` | Hero section (right side) — mustard-blob frame |
 | `assets/images/pm-illustration.png` | "The backstory" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
-| `assets/images/goa-01.jpg` … `goa-10.jpg` | The Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (01 = "A lazy day sipping & binging at Majorda" … 10 = "Cycling & island hopping between Dewar & Wanxim") |
+| `assets/images/ga1.jpg` … `ga8.jpg` | The first 8 slides of the Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (ga1 = "A lazy day sipping & binging at Majorda" … ga8 = "A colourful flight of stairs in Fontainhas") |
+| `assets/images/goa-09.jpg`, `assets/images/goa-10.jpg` | Slides 9–10 of the same carousel ("Immersing myself in the history of Old Goa", "Cycling & island hopping between Dewar & Wanxim") — still placeholders, no photos supplied for these two yet |
 | `assets/images/coonoor.jpg` | The Coonoor section in the same article |
 | `assets/images/card-tote-bag.png` | "Selected work" — Essay card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
@@ -31,11 +32,8 @@ a styled placeholder:
 Search the page for `[bracketed placeholder text]` — these are the spots
 still waiting on your copy:
 
-- Selected work cards — title and one-line description on each card, plus
-  the `href="#"` link on each card's "Read it →"
-- In `articles/two-dots-on-the-map.html`: the closing thought at the end
-  of the Goa section, and the entire Coonoor write-up (no source text was
-  available for either yet)
+- Selected work cards — the `href="#"` link on the How-to card's
+  "Read it →" (title/description still pending too)
 
 To add or remove work cards, copy/paste an `<article class="work-card">...</article>`
 block inside `.work-grid` in `index.html` — it's a plain CSS grid (3 columns

@@ -926,11 +926,18 @@ a { color: inherit; text-decoration: none; }
   font-size: 18px;
   line-height: 1.75;
 }
+.place-body p {
+  margin: 0 0 20px;
+}
+.place-body p:last-child {
+  margin-bottom: 0;
+}
 
 /* ---------- photo carousel ---------- */
 
 .photo-carousel {
   max-width: 480px;
+  min-width: 0;
   margin: 36px 0;
 }
 
