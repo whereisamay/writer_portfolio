@@ -79,11 +79,12 @@
     if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
 
     var slides = Array.prototype.slice.call(track.children);
+    var current = 0;
 
     slides.forEach(function (slide, i) {
       var dot = document.createElement("button");
       dot.setAttribute("aria-label", "Go to photo " + (i + 1));
-      dot.addEventListener("click", function () { scrollToSlide(i); });
+      dot.addEventListener("click", function () { goTo(i); });
       dotsWrap.appendChild(dot);
     });
     var dots = Array.prototype.slice.call(dotsWrap.children);
@@ -92,36 +93,43 @@
       return slides[0].getBoundingClientRect().width;
     }
 
-    function scrollToSlide(i) {
-      track.scrollTo({ left: i * slideStep(), behavior: "smooth" });
-    }
-
-    function currentIndex() {
-      return Math.round(track.scrollLeft / slideStep());
-    }
-
+    // Update the active dot / disabled state right away, driven by the
+    // clicked-toward index rather than waiting on the scroll animation to
+    // settle - keeps rapid clicks feeling immediate instead of laggy.
     function updateUI() {
-      var i = Math.max(0, Math.min(slides.length - 1, currentIndex()));
-      dots.forEach(function (d, di) { d.classList.toggle("is-active", di === i); });
-      prevBtn.disabled = track.scrollLeft <= 4;
-      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      dots.forEach(function (d, di) { d.classList.toggle("is-active", di === current); });
+      prevBtn.disabled = current <= 0;
+      nextBtn.disabled = current >= slides.length - 1;
     }
 
-    prevBtn.addEventListener("click", function () { scrollToSlide(Math.max(0, currentIndex() - 1)); });
-    nextBtn.addEventListener("click", function () { scrollToSlide(Math.min(slides.length - 1, currentIndex() + 1)); });
+    function goTo(i) {
+      current = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: current * slideStep(), behavior: "smooth" });
+      updateUI();
+    }
+
+    prevBtn.addEventListener("click", function () { goTo(current - 1); });
+    nextBtn.addEventListener("click", function () { goTo(current + 1); });
 
     track.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowRight") { scrollToSlide(Math.min(slides.length - 1, currentIndex() + 1)); }
-      if (e.key === "ArrowLeft") { scrollToSlide(Math.max(0, currentIndex() - 1)); }
+      if (e.key === "ArrowRight") { goTo(current + 1); }
+      if (e.key === "ArrowLeft") { goTo(current - 1); }
     });
 
+    // Keep state in sync with manual swipe/touch drags, once scrolling settles.
     var scrollTimer;
     track.addEventListener("scroll", function () {
       clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(updateUI, 60);
+      scrollTimer = setTimeout(function () {
+        current = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / slideStep())));
+        updateUI();
+      }, 80);
     });
 
-    window.addEventListener("resize", updateUI);
+    window.addEventListener("resize", function () {
+      track.scrollTo({ left: current * slideStep(), behavior: "auto" });
+    });
+
     updateUI();
   });
 })();
