@@ -69,4 +69,59 @@
       }
     });
   });
+
+  // Photo carousels (swipeable, scroll-snap based)
+  document.querySelectorAll(".photo-carousel").forEach(function (root) {
+    var track = root.querySelector(".photo-carousel-track");
+    var prevBtn = root.querySelector(".photo-carousel-prev");
+    var nextBtn = root.querySelector(".photo-carousel-next");
+    var dotsWrap = root.querySelector(".photo-carousel-dots");
+    if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    var slides = Array.prototype.slice.call(track.children);
+
+    slides.forEach(function (slide, i) {
+      var dot = document.createElement("button");
+      dot.setAttribute("aria-label", "Go to photo " + (i + 1));
+      dot.addEventListener("click", function () { scrollToSlide(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function slideStep() {
+      return slides[0].getBoundingClientRect().width;
+    }
+
+    function scrollToSlide(i) {
+      track.scrollTo({ left: i * slideStep(), behavior: "smooth" });
+    }
+
+    function currentIndex() {
+      return Math.round(track.scrollLeft / slideStep());
+    }
+
+    function updateUI() {
+      var i = Math.max(0, Math.min(slides.length - 1, currentIndex()));
+      dots.forEach(function (d, di) { d.classList.toggle("is-active", di === i); });
+      prevBtn.disabled = track.scrollLeft <= 4;
+      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+    }
+
+    prevBtn.addEventListener("click", function () { scrollToSlide(Math.max(0, currentIndex() - 1)); });
+    nextBtn.addEventListener("click", function () { scrollToSlide(Math.min(slides.length - 1, currentIndex() + 1)); });
+
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { scrollToSlide(Math.min(slides.length - 1, currentIndex() + 1)); }
+      if (e.key === "ArrowLeft") { scrollToSlide(Math.max(0, currentIndex() - 1)); }
+    });
+
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateUI, 60);
+    });
+
+    window.addEventListener("resize", updateUI);
+    updateUI();
+  });
 })();
