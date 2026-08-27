@@ -50,4 +50,14 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      item.classList.toggle("is-open", !open);
+    });
+  });
 })();
