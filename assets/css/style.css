@@ -887,6 +887,10 @@ a { color: inherit; text-decoration: none; }
   max-width: 640px;
   margin: 0 0 28px;
 }
+.split-inner .place-media {
+  max-width: none;
+  margin: 0;
+}
 
 .place-body {
   max-width: 720px;
