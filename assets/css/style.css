@@ -877,6 +877,19 @@ a { color: inherit; text-decoration: none; }
 .article-body .doc-source a {
   color: var(--ink);
 }
+
+.article-body .citation {
+  font-size: 0.68em;
+  line-height: 0;
+}
+.article-body .citation a {
+  color: var(--coral);
+  font-weight: 700;
+  text-decoration: none;
+}
+.article-body .citation a:hover {
+  text-decoration: underline;
+}
 .article-body ul ul {
   margin: 8px 0 0;
   padding-left: 20px;

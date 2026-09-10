@@ -23,9 +23,9 @@ a styled placeholder:
 | `assets/images/pm-illustration.png` | "The backstory" section — sits on a white card, `object-fit: contain` (use a PNG/SVG with a transparent or white background, not a cropped photo) |
 | `assets/images/ga1.jpg` … `ga8.jpg` | The 8 slides of the Goa photo carousel in `articles/two-dots-on-the-map.html`, in order (ga1 = "A lazy day sipping & binging at Majorda" … ga8 = "A colourful flight of stairs in Fontainhas") |
 | `assets/images/coonoor.png` | The Coonoor section in the same article |
-| `assets/images/card-tote-bag.png` | "Selected work" — Essay card thumbnail |
+| `assets/images/card-tote-bag.png` | "Selected work" — "What's in that tote bag?" card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
-| `assets/images/woos.jpg` | "Selected work" — How-to card thumbnail |
+| `assets/images/card-slop.jpg` | "Selected work" — "What's with the slop?" card thumbnail |
 
 ## Add your content
 
