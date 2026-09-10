@@ -25,7 +25,7 @@ a styled placeholder:
 | `assets/images/coonoor.png` | The Coonoor section in the same article |
 | `assets/images/card-tote-bag.png` | "Selected work" — "What's in that tote bag?" card thumbnail |
 | `assets/images/card-backpack.jpg` | "Selected work" — Travel card thumbnail |
-| `assets/images/card-slop.jpg` | "Selected work" — "What's with the slop?" card thumbnail |
+| `assets/images/aib.png` | "Selected work" — "What's with the slop?" card thumbnail (shown on a white background, `object-fit: contain`) |
 
 ## Add your content
 
